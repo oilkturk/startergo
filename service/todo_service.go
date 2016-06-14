@@ -38,7 +38,7 @@ func (obj *TodoService) Add(c *gin.Context) {
 		obj.DB.Create(&modelObj)
 		c.JSON(200, modelObj)
 	} else {
-		c.JSON(404, gin.H{"error": "Todo title, complete date, priority, color parameters required"})
+		c.JSON(404, gin.H{"error": "title, completedDate, priority, color parameters required"})
 	}
 }
 
