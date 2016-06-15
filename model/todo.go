@@ -1,6 +1,11 @@
 package model
 
-import "time"
+import (
+	"time"
+
+	"github.com/jinzhu/gorm"
+	"github.com/pborman/uuid"
+)
 
 // Todo is an unexported type.
 type Todo struct {
@@ -17,4 +22,10 @@ type Todo struct {
 // TableName is an unexported type.
 func (Todo) TableName() string {
 	return "starter_todo"
+}
+
+// BeforeCreate is an unexported type.
+func (obj *Todo) BeforeCreate(scope *gorm.Scope) error {
+	scope.SetColumn("ID", uuid.New())
+	return nil
 }
