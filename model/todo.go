@@ -16,5 +16,5 @@ type Todo struct {
 
 // TableName is an unexported type.
 func (Todo) TableName() string {
-	return "todo"
+	return "starter_todo"
 }

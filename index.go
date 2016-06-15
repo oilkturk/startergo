@@ -17,7 +17,7 @@ func main() {
 }
 
 func initServices() {
-	connectionString := "user=postgres password=postgres dbname=starterDB sslmode=disable"
+	connectionString := "user=postgres password=postgres dbname=postgres sslmode=disable"
 	db, err := gorm.Open("postgres", connectionString)
 
 	if err != nil {
